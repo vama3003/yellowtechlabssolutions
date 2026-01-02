@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - YellowTechLabs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="YellowTechLabs Home">
+                <img src="images/logo.png" alt="YellowTechLabs" style="height: 40px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero section-padding" style="min-height: 40vh; padding-bottom: 1rem;">
+        <div class="container text-center">
+            <h1>Our <span class="text-yellow">Work</span></h1>
+            <p>Showcasing our best projects and success stories.</p>
+        </div>
+    </header>
+
+    <!-- Case Study Template -->
+    <section class="portfolio-section section-padding" style="padding-top: 1rem;">
+        <div class="container">
+
+            <!-- Project 1 -->
+            <div class="case-study-block grid grid-2" style="margin-bottom: 4rem;">
+                <div class="case-image-container" style="height: 100%; min-height: 300px;">
+                    <img src="images/FinTech.png" alt="FinTech App Revamp"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px 0 0 10px;">
+                </div>
+                <div class="case-content">
+                    <h3>FinTech App Revamp</h3>
+                    <div style="margin: 1rem 0;">
+                        <h4 class="text-yellow">Problem</h4>
+                        <p>Legacy system causing slow transaction times.</p>
+                        <h4 class="text-yellow">Solution</h4>
+                        <p>Rebuilt backend with Node.js and optimized database.</p>
+                        <h4 class="text-yellow">Tech Stack</h4>
+                        <p>React, Node.js, MongoDB, AWS</p>
+                        <h4 class="text-yellow">Results</h4>
+                        <p class="result-highlight">50% faster transactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="case-study-block grid grid-2 reverse-layout">
+                <div class="case-content">
+                    <h3>HealthCare Portal</h3>
+                    <div style="margin: 1rem 0;">
+                        <h4 class="text-yellow">Problem</h4>
+                        <p>Inefficient patient data management.</p>
+                        <h4 class="text-yellow">Solution</h4>
+                        <p>Secure, HIPAA-compliant patient portal.</p>
+                        <h4 class="text-yellow">Tech Stack</h4>
+                        <p>Vue.js, Python Django, PostgreSQL</p>
+                        <h4 class="text-yellow">Results</h4>
+                        <p class="result-highlight">30% reduction in admin time</p>
+                    </div>
+                </div>
+                <div class="case-image-container" style="height: 100%; min-height: 300px;">
+                    <img src="images/Project 1.png" alt="HealthCare Portal"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 0 10px 10px 0;">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container grid grid-4">
+            <div class="footer-col">
+                <h3>YellowTechLabs</h3>
+                <p>Transforming ideas into reality.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@yellowtechlabs.com</p>
+                <p>+1 234 567 890</p>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2025 YellowTechLabs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
