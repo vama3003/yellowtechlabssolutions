@@ -1,4 +1,3 @@
-
 /**
  * YellowTechLabs - Main JavaScript
  * Handles interactions and dynamic behavior.
@@ -14,58 +13,50 @@ function initApp() {
     try {
         initMobileMenu();
         initSmoothScrolling();
-        // initContactForm(); // Disabled in favor of inline script in contact.html
+        initModals();
     } catch (error) {
         console.error('YellowTechLabs: Error initializing app', error);
     }
 }
 
 /**
- * Initializes the mobile menu toggle functionality.
+ * Mobile Menu Toggle
  */
 function initMobileMenu() {
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (!toggleButton || !navLinks) {
-        console.warn('YellowTechLabs: Mobile menu elements not found');
-        return;
-    }
-
-    toggleButton.addEventListener('click', () => {
-        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        toggleButton.setAttribute('aria-expanded', !isExpanded);
-        navLinks.classList.toggle('active');
-
-        // Toggle icon
-        const icon = toggleButton.querySelector('i');
-        if (icon) {
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!toggleButton.contains(event.target) && !navLinks.contains(event.target) && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            toggleButton.setAttribute('aria-expanded', 'false');
-            const icon = toggleButton.querySelector('i');
+    if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = toggleBtn.querySelector('i');
             if (icon) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
-        }
-    });
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
 }
 
 /**
- * Initializes smooth scrolling for anchor links.
+ * Smooth Scrolling for Anchor Links
  */
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -79,76 +70,89 @@ function initSmoothScrolling() {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-
-                // Close mobile menu if open
-                const navLinks = document.querySelector('.nav-links');
-                const toggleButton = document.querySelector('.mobile-menu-toggle');
-                if (navLinks && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    if (toggleButton) {
-                        toggleButton.setAttribute('aria-expanded', 'false');
-                        const icon = toggleButton.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
-                }
             }
         });
     });
 }
 
 /**
- * Initializes contact form submission.
- * Handles Email (FormSubmit) and WhatsApp.
- * @deprecated Logic moved to contact.html inline script
+ * Initializes modal functionality for Terms and Privacy.
  */
-/*
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    const successMsg = document.getElementById('successMessage');
+function initModals() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const closeBtn = document.querySelector('.modal-close');
 
-    if (!form) return;
+    if (!modalOverlay) return;
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    // Content for modals
+    const modalContent = {
+        'terms': {
+            title: 'Terms and Conditions',
+            body: `
+                <p>Welcome to YellowTechLabs. By using our website and services, you agree to the following terms:</p>
+                <ul>
+                    <li><strong>Services:</strong> We provide IT solutions, AI automation, and digital marketing services as described on our website.</li>
+                    <li><strong>Usage:</strong> You agree to use our services for lawful purposes only.</li>
+                    <li><strong>Intellectual Property:</strong> All content, code, and designs produced by YellowTechLabs remain our property unless otherwise agreed.</li>
+                    <li><strong>Liability:</strong> We are not liable for any indirect or consequential damages arising from the use of our services.</li>
+                    <li><strong>Updates:</strong> These terms may be updated at any time. Continued use of our services constitutes acceptance of the new terms.</li>
+                </ul>
+                <p>For full details, please contact our legal team.</p>
+            `
+        },
+        'privacy': {
+            title: 'Privacy Policy',
+            body: `
+                <p>Your privacy is important to us. This policy outlines how we handle your data:</p>
+                <ul>
+                    <li><strong>Data Collection:</strong> We collect information you provide via contact forms (Name, Email, Phone) to respond to inquiries.</li>
+                    <li><strong>Usage:</strong> We use your data solely for communication and service delivery. We do not sell your data to third parties.</li>
+                    <li><strong>Cookies:</strong> Our website may use cookies to enhance user experience and analyze traffic.</li>
+                    <li><strong>Security:</strong> We implement industry-standard security measures to protect your information.</li>
+                    <li><strong>Rights:</strong> You have the right to request access to or deletion of your personal data.</li>
+                </ul>
+                <p>For questions, contact info@yellowtechlabs.com.</p>
+            `
+        }
+    };
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        const contactMethod = data.contact_method; // 'email' or 'whatsapp'
-
-        if (contactMethod === 'whatsapp') {
-            // WhatsApp Logic
-            // Using the owner's number: 8866360950
-            const targetNumber = '8866360950';
-
-            let message = `*New Inquiry from Website*\n\n`;
-            message += `*Name:* ${data.name}\n`;
-            message += `*Email:* ${data.email}\n`;
-            message += `*Phone:* ${data.phone || 'N/A'}\n`;
-            message += `*Company:* ${data.company || 'N/A'}\n`;
-            message += `*Service:* ${data.service}\n`;
-            message += `*Budget:* ${data.budget}\n`;
-            message += `*Message:* ${data.message}\n`;
-
-            const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
-
-            window.open(whatsappUrl, '_blank');
-
-            // Show success message locally for WhatsApp
-            form.style.display = 'none';
-            if (successMsg) {
-                successMsg.style.display = 'block';
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Open Modal Triggers
+    document.querySelectorAll('.open-modal').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const type = link.getAttribute('data-modal');
+            if (modalContent[type]) {
+                modalTitle.innerHTML = modalContent[type].title;
+                modalBody.innerHTML = modalContent[type].body;
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
+        });
+    });
 
-        } else {
-            // Email Logic (Standard Form Submission)
-            // We do NOT preventDefault() here, allowing the form to submit to formsubmit.co naturally.
-            // This avoids CORS and Timeout issues with the AJAX API.
-            form.submit();
+    // Close Modal
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close on click outside
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            closeModal();
         }
     });
 }
-*/

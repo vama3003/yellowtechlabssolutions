@@ -16,7 +16,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo" aria-label="YellowTechLabs Home">
-                <img src="images/logo.png" alt="YellowTechLabs" style="height: 40px; width: auto;">
+                <img src="images/logo.png" alt="YellowTechLabs" style="height: 80px; width: auto;">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -88,7 +88,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container grid grid-4">
+        <div class="container grid grid-5">
             <div class="footer-col">
                 <h3>YellowTechLabs</h3>
                 <p>Transforming ideas into reality.</p>
@@ -110,16 +110,35 @@
             <div class="footer-col">
                 <h4>Connect</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#" class="open-modal" data-modal="terms">Terms & Conditions</a></li>
+                    <li><a href="#" class="open-modal" data-modal="privacy">Privacy Policy</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom text-center">
             <p>&copy; 2025 YellowTechLabs. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa-solid fa-times"></i></button>
+            <div class="modal-body" id="modalBody">
+                <h2 id="modalTitle">Modal Title</h2>
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

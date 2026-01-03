@@ -40,7 +40,7 @@
     <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
             <a href="index.html" class="logo" aria-label="YellowTechLabs Home">
-                <img src="images/logo.png" alt="YellowTechLabs" style="height: 40px; width: auto;">
+                <img src="images/logo.png" alt="YellowTechLabs" style="height: 80px; width: auto;">
             </a>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
@@ -236,27 +236,6 @@
         </div>
     </section>
 
-    <!-- Section 7: Testimonials -->
-    <section class="testimonials section-padding" aria-labelledby="testimonials-heading">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 id="testimonials-heading">Client <span class="text-yellow">Testimonials</span></h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <div class="profile-placeholder" role="img" aria-label="Jane Doe Profile Picture"></div>
-                    <p>"YellowTechLabs transformed our business with their AI solutions. Highly recommended!"</p>
-                    <h4>- Jane Doe, CEO</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="profile-placeholder" role="img" aria-label="John Smith Profile Picture"></div>
-                    <p>"Professional, fast, and incredibly skilled team. The best dev partners we've had."</p>
-                    <h4>- John Smith, CTO</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Section 8: Lead Magnet CTA -->
     <section id="audit" class="cta-section section-padding text-center" aria-labelledby="cta-heading">
         <div class="container">
@@ -268,7 +247,7 @@
 
     <!-- Section 9: Footer -->
     <footer class="footer">
-        <div class="container grid grid-4">
+        <div class="container grid grid-5">
             <div class="footer-col">
                 <h3>YellowTechLabs</h3>
                 <p>Transforming ideas into reality.</p>
@@ -290,16 +269,35 @@
             <div class="footer-col">
                 <h4>Connect</h4>
                 <div class="social-icons">
-                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#" class="open-modal" data-modal="terms">Terms & Conditions</a></li>
+                    <li><a href="#" class="open-modal" data-modal="privacy">Privacy Policy</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom text-center">
             <p>&copy; 2025 YellowTechLabs. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa-solid fa-times"></i></button>
+            <div class="modal-body" id="modalBody">
+                <h2 id="modalTitle">Modal Title</h2>
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
