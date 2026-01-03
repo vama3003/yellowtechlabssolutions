@@ -680,6 +680,7 @@ p {
 .timeline-year strong {
     color: #fff;
 }
+
 /* Logo Adjustment for Navbar */
 .navbar .logo {
     display: flex;
@@ -693,3 +694,34 @@ p {
     z-index: 1001;
 }
 
+
+.modal-body h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+
+/* Font Size Adjustment for Modal */
+.modal-body p,
+.modal-body ul,
+.modal-body li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* Hide Scrollbar for Modal Content */
+.modal-content {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Opera */
+}

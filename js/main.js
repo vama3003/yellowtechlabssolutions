@@ -87,33 +87,139 @@ function initModals() {
     if (!modalOverlay) return;
 
     // Content for modals
+    // Content for modals
     const modalContent = {
         'terms': {
-            title: 'Terms and Conditions',
+            title: 'Terms & Conditions',
             body: `
-                <p>Welcome to YellowTechLabs. By using our website and services, you agree to the following terms:</p>
+                <p>By accessing or using www.yellowtechlabs.in, you agree to comply with and be bound by these Terms & Conditions.</p>
+                
+                <h3>1. Use of Website</h3>
                 <ul>
-                    <li><strong>Services:</strong> We provide IT solutions, AI automation, and digital marketing services as described on our website.</li>
-                    <li><strong>Usage:</strong> You agree to use our services for lawful purposes only.</li>
-                    <li><strong>Intellectual Property:</strong> All content, code, and designs produced by YellowTechLabs remain our property unless otherwise agreed.</li>
-                    <li><strong>Liability:</strong> We are not liable for any indirect or consequential damages arising from the use of our services.</li>
-                    <li><strong>Updates:</strong> These terms may be updated at any time. Continued use of our services constitutes acceptance of the new terms.</li>
+                    <li>You agree to use the website for lawful purposes only</li>
+                    <li>You must not misuse, hack, or disrupt website functionality</li>
+                    <li>Unauthorized use may result in legal action</li>
                 </ul>
-                <p>For full details, please contact our legal team.</p>
+
+                <h3>2. Services Disclaimer</h3>
+                <ul>
+                    <li>All services are provided on a best-effort basis</li>
+                    <li>Project timelines, results, or outcomes may vary based on scope, client inputs, and external dependencies</li>
+                    <li>We do not guarantee specific business results (sales, revenue, rankings, profits)</li>
+                </ul>
+
+                <h3>3. Intellectual Property</h3>
+                <ul>
+                    <li>All content (text, graphics, logos, code, designs) is the property of YellowTechLabs Solutions LLP</li>
+                    <li>You may not copy, reproduce, or distribute content without written permission</li>
+                </ul>
+
+                <h3>4. Client Responsibilities</h3>
+                <p>Clients are responsible for:</p>
+                <ul>
+                    <li>Providing accurate requirements and content</li>
+                    <li>Timely approvals and feedback</li>
+                    <li>Legal compliance of their own data, content, and business operations</li>
+                </ul>
+
+                <h3>5. Limitation of Liability</h3>
+                <p>YellowTechLabs Solutions LLP shall not be liable for:</p>
+                <ul>
+                    <li>Any direct, indirect, incidental, or consequential damages</li>
+                    <li>Loss of data, revenue, or business opportunities</li>
+                    <li>Third-party service failures (hosting, APIs, payment gateways, cloud providers)</li>
+                </ul>
+
+                <h3>6. Third-Party Services</h3>
+                <p>We may integrate third-party tools, APIs, or platforms. We are not responsible for outages, changes, or failures of third-party services.</p>
+
+                <h3>7. Termination</h3>
+                <p>We reserve the right to suspend or terminate access to our services or website without notice if:</p>
+                <ul>
+                    <li>Terms are violated</li>
+                    <li>Illegal activity is detected</li>
+                    <li>Misuse or abuse occurs</li>
+                </ul>
+
+                <h3>8. Governing Law</h3>
+                <p>These Terms & Conditions are governed by the laws of India. Any disputes shall be subject to the jurisdiction of courts in India.</p>
+
+                <h3>9. Changes to Terms</h3>
+                <p>We may update these Terms at any time. Continued use of the website implies acceptance of updated terms.</p>
             `
         },
         'privacy': {
             title: 'Privacy Policy',
             body: `
-                <p>Your privacy is important to us. This policy outlines how we handle your data:</p>
+                <p>YellowTechLabs Solutions LLP (“we”, “our”, “us”) respects your privacy and is committed to protecting the personal information of users who visit our website www.yellowtechlabs.in or use our services.</p>
+
+                <h3>1. Information We Collect</h3>
+                <p>We may collect the following types of information:</p>
+                <p><strong>a) Personal Information</strong></p>
                 <ul>
-                    <li><strong>Data Collection:</strong> We collect information you provide via contact forms (Name, Email, Phone) to respond to inquiries.</li>
-                    <li><strong>Usage:</strong> We use your data solely for communication and service delivery. We do not sell your data to third parties.</li>
-                    <li><strong>Cookies:</strong> Our website may use cookies to enhance user experience and analyze traffic.</li>
-                    <li><strong>Security:</strong> We implement industry-standard security measures to protect your information.</li>
-                    <li><strong>Rights:</strong> You have the right to request access to or deletion of your personal data.</li>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Company name</li>
+                    <li>Project or service-related details</li>
                 </ul>
-                <p>For questions, contact info@yellowtechlabs.com.</p>
+                <p><strong>b) Technical Information</strong></p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type</li>
+                    <li>Device information</li>
+                    <li>Pages visited and time spent</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Provide and improve our services</li>
+                    <li>Communicate about inquiries, projects, or support</li>
+                    <li>Send updates, proposals, or marketing communication (only if opted in)</li>
+                    <li>Improve website performance and user experience</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+
+                <h3>3. Data Sharing & Disclosure</h3>
+                <p>We do not sell, rent, or trade your personal information. We may share data only:</p>
+                <ul>
+                    <li>With trusted service providers (hosting, analytics, payment gateways)</li>
+                    <li>If required by law, court order, or government authority</li>
+                    <li>To protect our legal rights, company assets, or users</li>
+                </ul>
+
+                <h3>4. Data Security</h3>
+                <p>We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+
+                <h3>5. Cookies Policy</h3>
+                <p>Our website may use cookies to:</p>
+                <ul>
+                    <li>Analyze traffic</li>
+                    <li>Improve website functionality</li>
+                    <li>Personalize user experience</li>
+                </ul>
+                <p>You may disable cookies via your browser settings.</p>
+
+                <h3>6. Third-Party Links</h3>
+                <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of external sites.</p>
+
+                <h3>7. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Request access to your data</li>
+                    <li>Request correction or deletion</li>
+                    <li>Withdraw consent at any time</li>
+                </ul>
+                <p>Email us at info@yellowtechlabs.in for requests.</p>
+
+                <h3>8. Policy Updates</h3>
+                <p>We may update this Privacy Policy at any time. Changes will be posted on this page with an updated date.</p>
+
+                <h3>9. Contact Information</h3>
+                <p><strong>YellowTechLabs Solutions LLP</strong><br>
+                📧 Email: info@yellowtechlabs.in<br>
+                🌐 Website: www.yellowtechlabssolutions.com</p>
             `
         }
     };
