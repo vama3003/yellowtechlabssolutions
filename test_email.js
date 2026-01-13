@@ -9,7 +9,7 @@ const data = JSON.stringify({
 
 const options = {
     hostname: 'formsubmit.co',
-    path: '/ajax/vama.m2003@gmail.com',
+    path: '/ajax/info@yellowtechlabssolutions.com',
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
