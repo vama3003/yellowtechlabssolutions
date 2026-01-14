@@ -211,14 +211,14 @@ function initModals() {
                     <li>Request correction or deletion</li>
                     <li>Withdraw consent at any time</li>
                 </ul>
-                <p>Email us at info@yellowtechlabs.in for requests.</p>
+                <p>Email us at info@yellowtechlabssolutions.com for requests.</p>
 
                 <h3>8. Policy Updates</h3>
                 <p>We may update this Privacy Policy at any time. Changes will be posted on this page with an updated date.</p>
 
                 <h3>9. Contact Information</h3>
                 <p><strong>YellowTechLabs Solutions LLP</strong><br>
-                📧 Email: info@yellowtechlabs.in<br>
+                📧 Email: info@yellowtechlabssolutions.com<br>
                 🌐 Website: www.yellowtechlabssolutions.com</p>
             `
         }
