@@ -154,7 +154,6 @@ p {
 
 .grid-4 {
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;
 }
 
 .grid-5 {
@@ -228,7 +227,7 @@ p {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(11px);
     transition: transform var(--transition-speed) var(--transition-ease);
 }
 
@@ -686,7 +685,7 @@ p {
 
 .navbar .logo img {
     margin-top: -20px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
     position: relative;
     z-index: 1001;
 }

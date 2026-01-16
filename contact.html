@@ -51,7 +51,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo" aria-label="YellowTechLabs Home">
-                <img src="images/newlogo.png" alt="YellowTechLabs" style="height: 80px; width: auto;">
+                <img src="images/finallogo.png" alt="YellowTechLabs" style="height: 80px; width: auto;">
             </a>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
@@ -190,7 +190,8 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>info@yellowtechlabssolutions.com</p>
+                <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@yellowtechlabssolutions.com"
+                        target="_blank">info@yellowtechlabssolutions.com</a></p>
                 <p>95101 64461</p>
             </div>
             <div class="footer-col">
@@ -290,7 +291,7 @@
                 time: new Date().toLocaleString()
             };
 
-            emailjs.send("service_nefrmcr", "template_zdquudr", templateParams)
+            emailjs.send("service_idz6jwv", "template_zdquudr", templateParams)
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
                     document.getElementById("contactForm").style.display = "none";
